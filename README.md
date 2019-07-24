@@ -24,24 +24,29 @@ virtualenv -p python3 venv
 # Activate the virtualenv
 source venv/bin/activate
 
-# Install project depedencies
+# Install project depedencies, such as Django and Django REST
 pip install -Ur requirements.txt
 
 # Start the local development server
 python manage.py runserver
 
-# Running the tests
-pytest
-
 ```
 
-## Navigate to the designated URL to view results
+## API Guide
 
-```
-GET
+Once the local development server is up and running, navigate one of the following web-browsable API to view:
 
-POST
-```
+List of users with disallowed usernames
+GET: localhost:8000/users/disallowed_users/
+
+List of users with updated usernames from previously disallowed usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form
+POST: localhost:8000/users/disallowed_users/
+
+List of users with duplicate usernames
+GET: localhost:8000/users/duplicate_users/
+
+List of users with updated usernames from previously duplicate usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form
+POST: localhost:8000/users/duplicate_users/
 
 ## Discussion
 
@@ -53,3 +58,7 @@ I have been using Django for 1.5 years.
 Django REST Framework:
 
 ### Design & Tradeoffs
+
+```
+
+```
