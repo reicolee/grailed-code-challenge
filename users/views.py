@@ -1,6 +1,7 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from users.models import Users
 from users.serializers import UsersSerializer
 
 from users.helpers import UsernamesResolutionHelper
