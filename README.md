@@ -38,19 +38,19 @@ Once the local development server is up and running, navigate one of the followi
 
 List of users with disallowed usernames:
 
-GET: [localhost:8000/users/disallowed_users/](localhost:8000/users/disallowed_users/)
+GET: localhost:8000/users/disallowed_users/
 
 List of users with updated usernames from previously disallowed usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form:
 
-POST: [localhost:8000/users/disallowed_users/](localhost:8000/users/disallowed_users/)
+POST: localhost:8000/users/disallowed_users/
 
 List of users with duplicate usernames:
 
-GET: [localhost:8000/users/duplicate_users/](localhost:8000/users/duplicate_users/)
+GET: localhost:8000/users/duplicate_users/
 
 List of users with updated usernames from previously duplicate usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form:
 
-POST: [localhost:8000/users/duplicate_users/](localhost:8000/users/duplicate_users/)
+POST: localhost:8000/users/duplicate_users/
 
 ## Discussion
 
