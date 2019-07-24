@@ -8,63 +8,31 @@
 
 ## Installation
 
-1. Install Python
+In order for this project to run, python3 and pip3 are required in your local machine.
 
 ```python
-#CLI Command
-python3 --version
 
-#Expected Output
-
-```
-
-2. Install pip
-
-```python
-#CLI Command
-pip3 --version
-
-#Expected Output
-
-```
-
-3. Install Virtualenv
-
-```python
-#CLI Command
+# Install virtualenv
 pip3 install virtualenv
 
-#Expected Output
+# Clone the repository
+git@github.com:reicolee/grailed-code-challenge.git
 
-```
-
-4. Clone the repository
-
-```python
-
-```
-
-5. Create & activate a virtualenv
-
-```python
-
-#CLI Command
+# Create a virtualenv
 virtualenv -p python3 venv
 
-```
+# Activate the virtualenv
+source venv/bin/activate
 
-6. Install dependencies from `requirements.txt`
+# Install project depedencies
+pip install -Ur requirements.txt
 
-## Start the local server
-
-```python
+# Start the local development server
 python manage.py runserver
-```
 
-## Running the tests
-
-```
+# Running the tests
 pytest
+
 ```
 
 ## Navigate to the designated URL to view results
