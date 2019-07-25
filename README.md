@@ -44,7 +44,7 @@ deactivate
 
 ## To run the test cases
 
-This command runs the test cases that lives in `./users/tests.py`.
+This command runs the test cases that live in `./users/tests.py`.
 
 ```
 python manage.py test users --keepdb
