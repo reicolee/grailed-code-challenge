@@ -79,11 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'grailed-exercise.sqlite3'),
+        'TEST': {
+            'NAME': os.path.join(BASE_DIR, 'test-grailed-exercise.sqlite3'),
+        },
     },
-    # 'users': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'grailed-exercise.sqlite3'),
-    # }
 }
 
 

@@ -29,6 +29,7 @@ class UsernamesResolutionHelper(object):
     def update_users(self):
         updated_user_list = []
         usernames = {}
+
         for user in self.user_queries:
             if user.username not in usernames:
                 usernames[user.username] = [user.id]

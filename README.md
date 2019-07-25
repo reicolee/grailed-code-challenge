@@ -25,7 +25,7 @@ pip3 install virtualenv
 # Clone the repository
 git@github.com:reicolee/grailed-code-challenge.git
 
-# Create a virtualenv
+# cd into the folder, and create a virtualenv
 virtualenv -p python3 venv
 
 # Activate the virtualenv
@@ -44,27 +44,29 @@ deactivate
 
 ## To run the test cases
 
-```python
-python manage.py test users
+This command runs the test cases that lives in `./users/tests.py`.
+
+```
+python manage.py test users --keepdb
 ```
 
 ## API Guide
 
 Once the development server is up and running, navigate to one of the following web-browsable APIs to view:
 
-List of users with disallowed usernames:
+**List of users with disallowed usernames:**
 
 GET: [localhost:8000/users/disallowed_users/](localhost:8000/users/disallowed_users/)
 
-List of users with updated usernames from previously disallowed usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form:
+**List of users with updated usernames from previously disallowed usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form:**
 
 POST: [localhost:8000/users/disallowed_users/](localhost:8000/users/disallowed_users/)
 
-List of users with duplicate usernames:
+**List of users with duplicate usernames:**
 
 GET: [localhost:8000/users/duplicate_users/](localhost:8000/users/duplicate_users/)
 
-List of users with updated usernames from previously duplicate usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form:
+**List of users with updated usernames from previously duplicate usernames. To update aka POST, scroll to the bottom, and hit the 'POST' button underneath the form:**
 
 POST: [localhost:8000/users/duplicate_users/](localhost:8000/users/duplicate_users/)
 
@@ -74,7 +76,7 @@ I have been using Django for roughly 1.5 - 2 years for both work and personal pr
 
 Django provides core scaffolding for the application out of the box, where most of the boilerplate code lives within the `./config` folder (created by running the command `django-admin startproject config .`), taking care of the configurations of the application. Code written by me lives within the `./users` folder (created by running the command `python manage.py startapp users`).
 
-The reason why I chose to present the data in the form of API endpoints instead of using a CLI application is because it seems intuitive for me to use a GET action for retrieving a list of users with either disallowed / duplicate usernames, and a POST action for updating the usernames to resolve collisions. Furthermore, instead of having to manually trigger certain functions to retrieve/view/update the data on the command line, having web browsable APIs to view the data is much more developer-friendly to inspect large amount of data.
+The reason why I chose to present the data in the form of API endpoints instead of using a CLI application is because it is intuitive to use a GET action for retrieving a list of users with either disallowed / duplicate usernames, and a POST action for updating the usernames to resolve collisions. Furthermore, instead of having to manually trigger certain functions to retrieve/view/update the data on the command line, having web browsable APIs to view the data is much more developer-friendly to inspect large amount of data.
 
 The flow of the application are as follow:
 
@@ -99,5 +101,7 @@ Note: `get_disallowed_usernames_list` is a model class method that lives in `use
 Depending on the `resolve_type` argument, it will select corresponding methods to retrieve user queries.
 
 **Class method: `update_users`**
+The method that iterates through each user object from the user queries for a given `resolve_type`, contains logic to handle username collisions.
 
 **Class method: `get_users`**
+Returns affected rows if `dry_run=True` or an updated user list when `dry_run=False`.
