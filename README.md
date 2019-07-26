@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Create a function to finds all users with disallowed usernames.
+- Create a function to find all users with disallowed usernames.
 - Create a function to resolve all username collisions, with an optinal 'dry run argument' that will print the affected rows without updating the databsae.
 - Create a fuction to resolve all disallowed usernames, with an optinal 'dry run argument' that will print the affected rows without updating the database.
 
